@@ -14,9 +14,6 @@
                 <div class="panel-body">
                     You are logged in!
                     <h2>All members</h2>
-                    {{$curUser->id}}
-                    {{$curUser->name}}
-                    {{$curUser->isAdmin}}
                     <table border='1'>
                     <tr>
 	                    <th>Name</th><th>Hometown</th><th>Pokemon</th><th>Action</th><th>Admin</th>
@@ -43,14 +40,6 @@
                     	</tr>
                    	@endforeach
 				    </table>
-<!--     
-                    <ul>
-                    	@foreach($users as $user)
-                    		<li>{{$user->name}} </li>
-                    	@endforeach
-                    </ul>
--->
-                    
                 </div>
             </div>
         </div>

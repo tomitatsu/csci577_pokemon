@@ -59,9 +59,6 @@
                                 <!-- Pokemon Name -->
                                 <td class="table-text">
                                     <div>{{ link_to_action('PokemonsController@detail', $poke->name, array($poke->name)) }}</div>
-	                                <!-- Pokemon Name 
-                                    {{$poke->name}}
-                                    -->
                                 </td>
 
                                 <!-- Number of trainers -->

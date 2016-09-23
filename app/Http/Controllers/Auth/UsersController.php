@@ -5,38 +5,17 @@ use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
-//use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Request;
 use App\Pokemon;
 use Auth;
+use Hash;
 use App\Http\Requests\AdminEditRequest;
 
 class UsersController extends Controller
 {
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'hometown' => 'required|max:255',
-            'password' => 'required|min:6|confirmed',
-        ]);
-    }
-
-    /**
-     * Edit a user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return User
-     */
     protected function getUpdate($id, AdminEditRequest $request)
     {
+    	// Admin control is moved to AdminEditRequest
     /*
     	$curUser = Auth::user();
     	if ($curUser->isAdmin == 0) {
@@ -56,12 +35,6 @@ class UsersController extends Controller
 /*
 */
 	}
-    /**
-     * Edit a user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return User
-     */
     protected function postUpdate($id)
     {
     	$user = User::find($id);
@@ -90,39 +63,4 @@ class UsersController extends Controller
 		return redirect('home');
 	}
 	
-    /**
-     * Edit a user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return User
-    protected function edit($id)
-    {
-//    	 $user['user'] = User::find($id);
-//    	 return view('auth.edit',$user);
- 
-//   		$data['users']=User::find($id);
-//    	return view('auth.edit', [
-  //  		'user' => $user[]
-    //	]);
-    	if($input=Request::all()){
-	        $val = Validator::make($input, [
-	            'name' => 'required|max:255',
-	            'email' => 'required|email|max:255|unique:users',
-	            'hometown' => 'required|max:255',
-	            'password' => 'required|min:6|confirmed',
-	        ]);
-
-    		if($val->fails()) {
- 				return redirect(URL::current())->with_error($val);
-    		} else {
-    			$update = User::where('id', '=', Input::get('id'))
-    					  ->update($input);
-    			return redirect('home');
-    		}
-    	}
-
-    	$user = User::find($id);
-    	return view('auth.edit', compact('user'));
-    }
-     */
 }

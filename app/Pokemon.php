@@ -10,6 +10,5 @@ class Pokemon extends Model
 	
 	public function trainers(){
 		return $this->hasMany('App\User', 'pokemon', 'name');	//Model name, foreign key name of User table, name of Pokemon table whici is related to the foreign key
-//		return $this->hasMany('App\User');
 	}
 }

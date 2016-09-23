@@ -17,6 +17,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+/*
+ * Authentification
+ */
+Auth::routes();
+
+/*
+ * Show Home page
+ */
+Route::get('/home', 'HomeController@index')->middleware('auth');
+/**
+ * Edit user profile
+ */
+Route::get('/home/update/{user}', 'Auth\UsersController@getUpdate')->middleware('auth');
+Route::post('/home/update/{user}', 'Auth\UsersController@postUpdate')->middleware('auth');
+
 /**
  * Show Pokemon Dashboard
  */
@@ -28,19 +44,13 @@ Route::get('/pokemon', 'PokemonsController@index')->middleware('auth');
 Route::post('/pokemon/create', 'PokemonsController@create')->middleware('auth');
 
 /**
- * Delete Task
+ * Delete A Pokemon
  */
 Route::delete('/pokemon/{poke}', 'PokemonsController@destroy')->middleware('auth');
 
 /**
- * Show Pokemon Dashboard
+ * Show Each Pokemon
  */
 Route::get('/pokemon/detail/{poke}', 'PokemonsController@detail')->middleware('auth');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->middleware('auth');
-
-Route::get('/home/update/{user}', 'Auth\UsersController@getUpdate')->middleware('auth');
-Route::post('/home/update/{user}', 'Auth\UsersController@postUpdate')->middleware('auth');
 

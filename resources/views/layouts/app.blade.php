@@ -58,6 +58,14 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
+			                    @if (Auth::user()->isAdmin == 1)
+	                                <li>
+	                                    {{link_to_action('PokemonsController@index', 'Admin')}}
+	                                </li>
+                                @endif
+                                <li>
+                                    {{link_to_action('Auth\UsersController@getUpdate', 'Edit profile', array(Auth::user()->id))}}
+                                </li>
                                 <li>
                                     <a href="{{ url('/logout') }}"
                                         onclick="event.preventDefault();
@@ -67,14 +75,6 @@
                                     <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                         {{ csrf_field() }}
                                     </form>
-                                </li>
-			                    @if (Auth::user()->isAdmin == 1)
-	                                <li>
-	                                    {{link_to_action('PokemonsController@index', 'Admin')}}
-	                                </li>
-                                @endif
-                                <li>
-                                    {{link_to_action('Auth\UsersController@getUpdate', 'Edit profile', array(Auth::user()->id))}}
                                 </li>
                             </ul>
                         </li>

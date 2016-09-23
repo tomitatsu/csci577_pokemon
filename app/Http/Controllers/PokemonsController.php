@@ -24,7 +24,6 @@ class PokemonsController extends Controller
 		]);
 	}
 
-//    public function destroy(Pokemon $poke){
     public function destroy($name, AdminEditRequest $request){
     	$poke = Pokemon::where('name', $name)->first();
 		$hoge = $poke->delete();
@@ -39,17 +38,6 @@ class PokemonsController extends Controller
     	$this->validate($req, [
 			'name' => 'required|unique:pokemons|max:255',
 		]);
-/*
-		$validator = Validator::make($req->all(), [
-			'name' => 'required|max:255',
-		]);
-		
-		if ($validator->fails()) {
-			return redirect('pokemon')
-				->withInput()
-				->withErros($validator);
-		}
-*/		
 		$poke = new Pokemon;
 		$poke->name = $req->name;
 		$poke->save();
