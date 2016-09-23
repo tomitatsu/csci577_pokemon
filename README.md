@@ -91,3 +91,6 @@ I mainly edited these files:
  - layouts/
 	 - app.blade.php
 		 - Use drop down list on user name in the top right in home page
+
+## ER diagram
+![ER](https://github.com/tomitatsu/csci577_pokemon/blob/master/images/ER_diagram.JPG)
