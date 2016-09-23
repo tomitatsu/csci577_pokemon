@@ -23,11 +23,14 @@ Hometown can be empty.
  - Cannot edit other's profile.
  - Change your profile.
 	 - Including selecting a pokemon in edit page.
-	 - **You can choose empty name of pokemon, it means you don't have a pokemon** 
+	 - **You can choose empty name of pokemon, it means you don't have a pokemon**
+		 - ![empty](https://github.com/tomitatsu/csci577_pokemon/blob/master/images/empty_pokemon.JPG) 
 	 - **After edit your profile, you can see this message in homepage.** 
 		 - "Congrats! Edit success"
+		 - ![edit_success](https://github.com/tomitatsu/csci577_pokemon/blob/master/images/welcome.JPG)
  - If you attempt to see restricted page (i.e. only admin can see the page), you go to "forbidden" page
 	 - In this case, you should use "back" button of your browser.
+	 - ![forbidden](https://github.com/tomitatsu/csci577_pokemon/blob/master/images/forbidden.JPG)
 
 ## What admins can/cannot do
  - All things trainers can do
@@ -35,6 +38,7 @@ Hometown can be empty.
 	 - Click "edit" link in the profile in the user's table in home page
  - Manage pokemons
 	 - Click "Admin" button under your name on top right in your home page
+	 - ![pokemon_dashboard](https://github.com/tomitatsu/csci577_pokemon/blob/master/images/pokemon.JPG)
 	 - Add a pokemon to the system
 		 - **If you succeed to add a pokemon, you can see this message:**
 			 - Congrats! A new pokemon has been created! 
@@ -46,6 +50,7 @@ Hometown can be empty.
 	 - You can see the total number of pokemons the system has, all pokemons' name, and the number of trainers of each pokemon
 	 - **You can also see the name of trainers who own the each pokemon**
 		 - Click the link of the pokemon's name
+		 - ![pokemon_detail](https://github.com/tomitatsu/csci577_pokemon/blob/master/images/pokemon_detail.JPG) 
 	 - You can go back to your home page by clicking "Go Back to Home" button on the bottom of admin page
 
 
