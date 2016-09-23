@@ -28,14 +28,6 @@ class LoginController extends Controller
     }
 
     /**
-    public function index()
-    {
-    	$curUser = Auth::user();
-    	echo $curUser->name;
-    }
-     */
-
-    /**
      * Where to redirect users after login / registration.
      *
      * @var string
@@ -59,8 +51,7 @@ class LoginController extends Controller
      */
     public function authenticate()
     {
-        if (Auth::attempt(['name' => $name, 'password' => $password, 'isAdmin' => 1])) {
-//        if (Auth::attempt(['email' => $email, 'password' => $password])) {
+        if (Auth::attempt(['name' => $name, 'password' => $password])) {
             // Authentication passed...
             return redirect()->intended('dashboard');
         }

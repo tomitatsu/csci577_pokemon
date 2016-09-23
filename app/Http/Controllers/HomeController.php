@@ -19,22 +19,13 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
     	$users = User::all();
     	$curUser = Auth::user();
-//    	echo $curUser->name;
-//    	$poke = Pokemon::find($curUser->pokemonId);
-//        return view('home', compact('users'));
 		return view('home', [
 			'users' => $users,
 			'curUser' => $curUser,
-//			'poke' => $poke,
 		]);
     }
 }
