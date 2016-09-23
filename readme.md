@@ -1,6 +1,8 @@
 Tats Pokemon System
 ===================
 
+![welcome](https://github.com/tomitatsu/csci577_pokemon/blob/master/images/welcome.JPG)
+
 ## Sign up
 You can sign-up by clicking "Register" button on top of the welcome page. You have to input:
 
@@ -81,3 +83,6 @@ I mainly edited these files:
 		 - detail.blade.php
  - routes/
 	 - web.php
+ - layouts/
+	 - app.blade.php
+		 - Use drop down list on user name in the top right in home page
